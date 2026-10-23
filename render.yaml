@@ -1,0 +1,39 @@
+# Render Blueprint — free web service for Corridor API
+# Deploy from GitHub branch render-vercel-deploy-prep (set Branch in dashboard if prompted).
+# After first deploy: set CORS_ALLOWED_ORIGINS to your Vercel URL in the dashboard (optional —
+# CORS_ALLOWED_ORIGIN_REGEXES already allows https://*.vercel.app).
+services:
+  - type: web
+    name: corridor-api
+    runtime: python
+    plan: free
+    repo: https://github.com/syedusman00/corridor
+    branch: render-vercel-deploy-prep
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate --no-input
+    startCommand: gunicorn config.wsgi:application -c gunicorn.conf.py
+    healthCheckPath: /api/health/
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com"
+      - key: SECURE_SSL_REDIRECT
+        value: "True"
+      - key: ROUTING_PROVIDER
+        value: here
+      - key: GUNICORN_TIMEOUT
+        value: "120"
+      - key: WEB_CONCURRENCY
+        value: "1"
+      # Set these in the Render dashboard (do not commit secrets):
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false
+      - key: CSRF_TRUSTED_ORIGINS
+        sync: false
+      - key: HERE_API_KEY
+        sync: false

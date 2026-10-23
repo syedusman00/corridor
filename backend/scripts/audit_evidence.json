@@ -1,0 +1,105 @@
+{
+  "routing_provider": "osrm",
+  "route_count": 3,
+  "routes": [
+    {
+      "id": "route-1",
+      "distance_miles": 1004.3,
+      "duration_hours": 17.82,
+      "severe_miles": 0.0,
+      "high_miles": 0.0,
+      "average_risk": 0.0,
+      "has_no_travel": false,
+      "checkpoints": 22,
+      "sample_checkpoint": {
+        "index": 1,
+        "lat": 41.855171,
+        "lon": -88.520179,
+        "distance_miles": 50.0,
+        "fraction": 0.049883,
+        "eta": "2026-10-22T17:52:43.466210+00:00",
+        "weather": {
+          "time": "2026-10-22T17:00",
+          "temperature_c": 18.7,
+          "wind_mph": 3.8,
+          "rain_in_hr": 0.0,
+          "snow_in_hr": 0.0,
+          "weather_code": 0
+        },
+        "wind_risk": "Low",
+        "rain_risk": "Low",
+        "snow_risk": "Low",
+        "overall_risk": "Low",
+        "risk_score": 0
+      }
+    },
+    {
+      "id": "route-2",
+      "distance_miles": 1114.7,
+      "duration_hours": 19.93,
+      "severe_miles": 0.0,
+      "high_miles": 0.0,
+      "average_risk": 0.0,
+      "has_no_travel": false,
+      "checkpoints": 24,
+      "sample_checkpoint": {
+        "index": 1,
+        "lat": 41.412143,
+        "lon": -88.193746,
+        "distance_miles": 50.0,
+        "fraction": 0.044925,
+        "eta": "2026-10-22T17:53:06.551128+00:00",
+        "weather": {
+          "time": "2026-10-22T17:00",
+          "temperature_c": 19.9,
+          "wind_mph": 0.9,
+          "rain_in_hr": 0.0,
+          "snow_in_hr": 0.0,
+          "weather_code": 0
+        },
+        "wind_risk": "Low",
+        "rain_risk": "Low",
+        "snow_risk": "Low",
+        "overall_risk": "Low",
+        "risk_score": 0
+      }
+    },
+    {
+      "id": "route-3",
+      "distance_miles": 1201.9,
+      "duration_hours": 22.35,
+      "severe_miles": 0.0,
+      "high_miles": 0.0,
+      "average_risk": 0.0,
+      "has_no_travel": false,
+      "checkpoints": 26,
+      "sample_checkpoint": {
+        "index": 1,
+        "lat": 42.13357,
+        "lon": -88.46995,
+        "distance_miles": 50.0,
+        "fraction": 0.041661,
+        "eta": "2026-10-22T17:55:14.899678+00:00",
+        "weather": {
+          "time": "2026-10-22T17:00",
+          "temperature_c": 19.1,
+          "wind_mph": 4.9,
+          "rain_in_hr": 0.0,
+          "snow_in_hr": 0.0,
+          "weather_code": 0
+        },
+        "wind_risk": "Low",
+        "rain_risk": "Low",
+        "snow_risk": "Low",
+        "overall_risk": "Low",
+        "risk_score": 0
+      }
+    }
+  ],
+  "recommendation": {
+    "route_id": "route-1",
+    "reason": "Tied on risk metrics; shortest travel time (17.8h vs 19.9h)."
+  },
+  "heatmap_points": 20,
+  "heatmap_hours": 49
+}

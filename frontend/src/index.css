@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+@theme {
+  --font-sans: "DM Sans", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Outfit", "DM Sans", system-ui, sans-serif;
+  --color-ink: #0f1c2e;
+  --color-ink-muted: #5a6b7f;
+  --color-surface: #f4f7fb;
+  --color-panel: #ffffff;
+  --color-line: #d7e0ea;
+  --color-accent: #0d7a6f;
+  --color-accent-deep: #065f58;
+  --color-accent-soft: #e6f5f3;
+  --color-warn: #c47a12;
+  --color-danger: #c23b2e;
+  --color-severe: #7a1f1f;
+  --color-route-1: #0d7a6f;
+  --color-route-2: #2b6cb0;
+  --color-route-3: #9a5b13;
+  --color-risk-low: #2f9e6b;
+  --color-risk-moderate: #d4a017;
+  --color-risk-high: #e07a2f;
+  --color-risk-severe: #c23b2e;
+  --color-risk-no-travel: #4a0d0d;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #d9efe9 0%, transparent 55%),
+      radial-gradient(900px 500px at 100% 0%, #d6e4f5 0%, transparent 50%),
+      var(--color-surface);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .panel {
+    background: color-mix(in srgb, var(--color-panel) 92%, transparent);
+    border: 1px solid var(--color-line);
+    backdrop-filter: blur(10px);
+  }
+
+  .maplibregl-popup-content {
+    padding: 0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 12px 40px rgba(15, 28, 46, 0.18) !important;
+    overflow: hidden;
+  }
+
+  .maplibregl-popup-tip {
+    border-top-color: white !important;
+  }
+
+  /* MapLibre needs a real non-zero box; canvas fills the shell */
+  .route-map-shell .maplibregl-map,
+  .route-map-shell .maplibregl-canvas-container,
+  .route-map-shell .maplibregl-canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

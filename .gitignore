@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/venv/
+.venv/
+venv/
+
+# Build
+frontend/dist/
+backend/staticfiles/
+backend/db.sqlite3
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Env / secrets — never commit API keys or production secrets
+.env
+.env.*
+!.env.example
+!**/.env.example
+backend/.env
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+frontend/.env.production.local
+*.pem
+credentials*.json
+secrets*.json
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Assessment source (optional keep)
+# fs-assessment-spotter.pdf
+assessment_requirements.txt
